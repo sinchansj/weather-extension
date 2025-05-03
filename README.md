@@ -1,40 +1,60 @@
-# Weather App with Wind Visualization
+# Wind Visualization Layer - Feature Proposal
 
-A modern weather application featuring interactive wind pattern visualization on maps.
+A prototype implementation of a wind pattern visualization layer for integration with the existing weather application.
 
-## Overview
+## Proposal Overview
 
-This project implements a weather application with a focus on visualizing wind patterns across geographic regions. The current implementation features a simulated wind flow visualization layer that renders directional arrows on a Google Maps interface.
+This project demonstrates a proof-of-concept wind visualization feature that could enhance the existing weather application. It uses the same technology stack (Vue.js and Google Maps) to ensure seamless integration with the current codebase.
 
-## Features
+## Feature Capabilities
 
-- Interactive map interface using Google Maps API
-- Dynamic wind arrow visualization that responds to map interactions (pan/zoom)
+- Interactive wind flow visualization overlay on Google Maps
+- Dynamic arrow rendering that responds to map interactions (pan/zoom)
 - Smooth loading transitions with loading indicators
 - Configurable arrow density and visual styling
 - Responsive design that adapts to different screen sizes
 
-## Technology Stack
+## Technology Alignment
 
-- Vue.js 3 with Composition API
-- Google Maps JavaScript API
-- HTML Canvas for rendering wind patterns
+- Built with Vue.js 3 using Composition API (matching existing app)
+- Leverages the Google Maps JavaScript API already in use
+- Uses HTML Canvas for efficient rendering of wind patterns
 
-## Current Implementation
+## Current Implementation Details
 
 The wind visualization layer currently:
 
 - Renders directional arrows on a canvas overlay
-- Uses a mathematical model based on sine waves to simulate wind patterns
+- Uses a mathematical model to simulate wind patterns (placeholder for real data)
 - Adjusts arrow density based on screen size and zoom level
 - Handles map interaction events (drag, zoom) with appropriate loading states
 - Maintains consistent arrow density across different zoom levels
 
-The wind flow direction is currently simulated using mathematical functions rather than real-world data. This provides a visual demonstration of the rendering approach while the API integration strategy is being developed.
+## Integration Considerations
 
-## Setup Instructions
+The prototype currently uses simulated wind data. For full implementation, I would need guidance on:
 
-1. Clone the repository
+- Accessing the weather API endpoints used in the main application
+- Understanding the data format of wind information from your API sources
+- Strategy for handling API requests at different zoom levels
+
+## Development Status
+
+This feature prototype demonstrates the visualization approach with simulated data. I'm seeking input from the development team on the API integration strategy before proceeding with the implementation using real-world data.
+
+## Questions for Discussion
+
+- What is the recommended strategy for handling different zoom levels (level of detail)?
+- Should we use client-side interpolation or fetch new data on zoom/pan events?
+- What are appropriate data refresh rates and caching strategies?
+- Are there any performance constraints we should consider for large datasets?
+- What's the best approach for normalizing wind data from your existing APIs?
+
+## Demo Setup
+
+To review this feature prototype:
+
+1. Clone this repository
 2. Install dependencies:
    ```
    npm install
@@ -45,22 +65,6 @@ The wind flow direction is currently simulated using mathematical functions rath
    npm run dev
    ```
 
-## Development Status
+## Next Steps
 
-The application currently demonstrates the visualization approach with simulated data. The next phase requires integration with real-world wind data APIs.
-
-### Open Questions for API Integration
-
-- Strategy for handling different zoom levels (level of detail)
-- Whether to use client-side interpolation or fetch new data on zoom changes
-- Optimal data refresh rates and caching strategies
-- Performance considerations for large datasets
-- Best practices for normalizing wind data across different sources
-
-## Contributing
-
-This project is under active development. Please coordinate with project leads before submitting contributions.
-
-## License
-
-[Appropriate license information] 
+With your feedback and guidance on API integration, this feature can be refined and prepared for integration into the main application codebase. 
